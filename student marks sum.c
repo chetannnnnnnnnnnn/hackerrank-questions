@@ -3,10 +3,21 @@
 #include <math.h>
 #include <stdlib.h>
 
-//Complete the following function.
 
 int marks_summation(int* marks, int number_of_students, char gender) {
-  //Write your code here.
+  int even;
+  int SumOfEven = 0 ;
+   int SumOfOdd = 0 ;
+   for (int i = 0; i < number_of_students; i++){
+    if (marks[i]%2 == 0){
+     SumOfEven = SumOfEven + marks[i];
+    }else{
+      SumOfOdd = SumOfOdd + marks[i];
+    }
+   }
+
+  return gender == 'b' ? SumOfEven : SumOfOdd; 
+  
 }
 
 int main() {
@@ -25,6 +36,6 @@ int main() {
     sum = marks_summation(marks, number_of_students, gender);
     printf("%d", sum);
     free(marks);
- 
+  
     return 0;
 }
