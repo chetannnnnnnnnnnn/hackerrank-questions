@@ -6,7 +6,7 @@
 
 int marks_summation(int* marks, int number_of_students, char gender) {
 int sumOfEven = 0;
-int sumofodd= 0;
+int sumofodd = 0;
 if( gender == 'b'){
   for (int i = 0; i < number_of_students; i++) {
     if (i%2 == 0){
@@ -16,14 +16,20 @@ if( gender == 'b'){
   }
  
 }
-if( gender == 'b'){
-  for (int i = 0; i < number_of_students; i++) {
-    if (i%2 != 0){
-     sumofodd = marks[i] + sumofodd;
+if( gender == 'g'){
+  for (int j = 0; j < number_of_students; j++) {
+    if (j%2 == 1){
+     sumofodd = marks[j] + sumofodd;
     }
   
   }}
-    return gender == 'b' ? sumOfEven : sumofodd; 
+   if (gender == 'g'){
+    return sumofodd;
+   }
+   else{
+    return sumOfEven;
+   }
+    
 }
 
 int main() {
